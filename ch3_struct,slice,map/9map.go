@@ -10,16 +10,33 @@ import "fmt"
 type Vertex struct {
 	Lat,Long float64
 }
+//声明但是没有初始化分配内存空间，无法使用
+var m map[string]Vertex
 
-var m map[string]Vertex//定义,如果定义，没有赋值则，必须要make，才可以使用map操作
+//声明并初始化
+var m1=map[string]Vertex{
+	"Tom":Vertex{23,34},
+}
 
 func main()  {
-	m=make(map[string]Vertex)//创建，可以不需要定义，直接创建map
+	m=make(map[string]Vertex)//初始化，分配了空间，可以使用
 	m["Bell Labs"]=Vertex{
 		40.34234,-123.2312,
 	}
 	fmt.Print(m["Bell Labs"])
 
+	m1["Jack"]=Vertex{
+		40.34234,-123.2312,
+	}
+	fmt.Print(m1["Tom"])
+	fmt.Print(m1["Jack"])
+
+	m2:=make(map[string]Vertex)//声明并初始化一个空的map
+	fmt.Println(m2)
+	m2["Jack"]=Vertex{
+		40.34234,-123.2312,
+	}
+	fmt.Print(m2["Jack"])
 }
 
 

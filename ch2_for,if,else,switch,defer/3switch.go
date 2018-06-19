@@ -20,7 +20,7 @@ func main() {
 	}
 
 
-	fmt.Println("When's Saturday?")
+	fmt.Println("\nWhen's Saturday?")
 	today:=time.Now().Weekday()
 	fmt.Println(today)
 	switch time.Saturday {

@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-const name string=23
+const name1 string="23"
 
 var (
 	name string= "aaa"

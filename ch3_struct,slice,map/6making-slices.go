@@ -6,7 +6,9 @@ package main
 import "fmt"
 
 func main() {
-	var z []int//[],0,0，z为nil
+	var z []int//[],0,0，z为nil,声明和初始化了一个空的切片，长度和容量都为0
+	s := []int{2, 3, 5, 7, 11, 13}
+	fmt.Println(s)
 	fmt.Println(z,len(z),cap(z))//
 	if z ==nil {
 		fmt.Println("nil")
