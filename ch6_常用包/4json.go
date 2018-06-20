@@ -13,33 +13,35 @@ type Movie struct {
 }
 
 var movies = []Movie{
-	{Title: "Casablanca", Year: 1942,
+	{
+		Title: "Casablanca", Year: 1942,
 		Actors: []string{"Hum", "In"}},
-	{Title: "Cool", Year: 1967,
+	{
+		Title: "Cool", Year: 1967,
 		Actors: []string{"asdf", "asdf"}},
 }
 
 func main() {
 	//普通json
-	data,err:=json.Marshal(movies)
+	data, err := json.Marshal(movies)
 	if err != nil {
-		log.Fatalf("JSON marshaling:%s",err)
+		log.Fatalf("JSON marshaling:%s", err)
 	}
-	fmt.Printf("%s\n",data)
+	fmt.Printf("%s\n", data)
 
 	//格式化json
-	data,err=json.MarshalIndent(movies,"","		")
+	data, err = json.MarshalIndent(movies, "", "		")
 	if err != nil {
-		log.Fatalf("JSON marshaling:%s",err)
+		log.Fatalf("JSON marshaling:%s", err)
 	}
-	fmt.Printf("%s\n",data)
+	fmt.Printf("%s\n", data)
 
 	//解析json
 	var titles []Movie
-	json.Unmarshal(data,&titles)
+	json.Unmarshal(data, &titles)
 	fmt.Println(titles)
 
-	var titles2 []struct{Title string }
-	json.Unmarshal(data,&titles2)
+	var titles2 []struct{ Title string }
+	json.Unmarshal(data, &titles2)
 	fmt.Println(titles2)
 }
