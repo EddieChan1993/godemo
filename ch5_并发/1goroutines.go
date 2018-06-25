@@ -19,4 +19,8 @@ func say(s string) {
 func main() {
 	go say("world")
 	say("hello")
+
+	go func(aa string) {
+		//内置函数
+	}("a")
 }
