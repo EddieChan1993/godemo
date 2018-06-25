@@ -8,6 +8,10 @@ import (
 )
 
 func main() {
+	var str string= "aaabbbccc"
+	fmt.Println(str[0:3])
+	fmt.Println(len(str))
+
 	s := []int{2, 3, 5, 7, 11, 13}
 
 	fmt.Println("s==", s)
